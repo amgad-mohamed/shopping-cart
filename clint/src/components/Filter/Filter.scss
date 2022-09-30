@@ -1,0 +1,26 @@
+.filter-wrapper{
+    border: 1px solid rgba(37, 34, 34, 0.159);
+    .filter-title {
+        background-color: #2a5ea5;
+        padding: 10px;
+        color: aliceblue;
+    } 
+    .num-of-product{
+         padding: 10px;
+    }
+    .filter-by-size{
+        display: flex;
+        flex-direction: column;
+    }
+    > div {
+        padding: 15px 25px;
+    }
+}
+.fiter-select{
+    height: 40px;
+    border-radius: 5px;
+}
+.order-select{
+    height: 40px;
+    border-radius: 5px;
+}

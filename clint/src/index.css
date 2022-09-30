@@ -26,6 +26,7 @@ main {
 .wrapper {
   display: flex;
   justify-content: space-between;
+  margin: 25px 25px;
 }
 
 .wrapper .products-wrapper {
