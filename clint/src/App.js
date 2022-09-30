@@ -13,29 +13,31 @@ function App() {
   const handleFilterBySize = (e) => {
     setSize(e.target.value);
     if (e.target.value === "ALL") {
-      setProducts (data);
+      setProducts(data);
+    } else {
+      const productClone = [...products];
+      const newProduct = productClone.filter(
+        (p) => p.sizes.indexOf(e.target.value) !== -1
+      );
+      setProducts(newProduct);
     }
-    else{
-      const productClone = [...products] ;
-    const newProduct = productClone.filter((p) =>  p.sizes.indexOf(e.target.value) !== -1 )
-    setProducts  (newProduct);}
   };
   console.log(products);
 
   const handleFilterBySort = (e) => {
     const order = e.target.value;
-    setSort (order)
-    const productClone = [...products] ;
-    const newProduct = productClone.sort(function (a ,b) {
-      if(order === "Lower"){
-        return a.price -b.price
-      }else if (order === "Highst")
-       { return b.price -a.price}
-       else{
-        return a.id < b.id ?  1 : -1
-       }
-    })
-    setProducts(newProduct)
+    setSort(order);
+    const productClone = [...products];
+    const newProduct = productClone.sort(function (a, b) {
+      if (order === "Lower") {
+        return a.price - b.price;
+      } else if (order === "Highst") {
+        return b.price - a.price;
+      } else {
+        return a.id < b.id ? 1 : -1;
+      }
+    });
+    setProducts(newProduct);
   };
 
   return (
