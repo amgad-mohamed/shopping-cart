@@ -11,7 +11,7 @@ function App() {
   const [sort, setSort] = useState();
   const [size, setSize] = useState();
   const [cartItem, setCartItem] = useState(JSON.parse(localStorage.getItem('cartItem')) || []);
-
+  
   const handleFilterBySize = (e) => {
     setSize(e.target.value);
     if (e.target.value === "ALL") {
@@ -53,7 +53,7 @@ function App() {
     if (!isProductExist){
       cartItemsClone.push({...product , qty :1})
     }
-    setCartItem (cartItemsClone)
+     setCartItem (cartItemsClone)
   };
   useEffect(()=> {
     localStorage.setItem('cartItem', JSON.stringify(cartItem))
@@ -61,8 +61,9 @@ function App() {
   const removeFromCart = (product)=>{
     const cartItemsClone = [...cartItem];
     setCartItem(cartItemsClone.filter(p=> p.id !== product.id))
-  }
-
+  };
+ 
+  
   return (
     <div className="layout">
       <Header />
@@ -80,7 +81,8 @@ function App() {
           />
         </div>
         <Cart cartItem={cartItem}
-         removeFromCart = {removeFromCart}/>
+         removeFromCart = {removeFromCart}
+          />
       </main>
 
       <Footer />
