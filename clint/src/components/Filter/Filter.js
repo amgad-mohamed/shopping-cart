@@ -1,8 +1,9 @@
 import React from "react";
 import "../../css/Filter/Filter.css";
-
+import Flip from "react-reveal/Flip"
 function Filter(props) {
   return (
+    <Flip left cascade>
     <div className="filter-wrapper">
       <h2 className="filter-title">Filter</h2>
       <p className="num-of-product">Number of products : {props.productNumber} product</p>
@@ -26,6 +27,7 @@ function Filter(props) {
         </select>
       </div>
     </div>
+    </Flip>
   );
 }
 
