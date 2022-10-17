@@ -1,11 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const router =require ("./routes/routes")
+const router = require("./routes/routes");
 
 const app = express();
 app.use(bodyParser.json());
-app.use("/", router)
+app.use("/", router);
 
 const connectionString = "mongodb://localhost/react-shopping-cart";
 mongoose
