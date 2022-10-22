@@ -11,7 +11,7 @@ function Checkoutform(props) {
             &times;
           </span>
           <Zoom>
-            <form onSubmit={props.submitOrder}>
+            <form onSubmit={props.handleOnSubmit}>
               <Input
                 label="Name"
                 type="text"

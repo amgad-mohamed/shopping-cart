@@ -1,28 +1,23 @@
 .filter-wrapper {
-  border: 1px solid rgba(37, 34, 34, 0.159);
+  background-color: #fff;
+  border: 1px solid #c0c0c0;
+  display: flex;
+  flex-direction: column;
 }
 .filter-wrapper .filter-title {
   background-color: #2a5ea5;
   padding: 10px;
-  color: aliceblue;
-}
-.filter-wrapper .num-of-product {
-  padding: 10px;
-}
-.filter-wrapper .filter-by-size {
-  display: flex;
-  flex-direction: column;
+  color: #fff;
+  margin-bottom: 20px;
 }
 .filter-wrapper > div {
-  padding: 15px 25px;
+  padding: 5px 20px;
+  margin-bottom: 13px;
 }
-
-.fiter-select {
+.filter-wrapper select {
+  display: block;
   height: 40px;
-  border-radius: 5px;
-}
-
-.order-select {
-  height: 40px;
+  border: 1px soild #ddd;
+  width: 100%;
   border-radius: 5px;
 }

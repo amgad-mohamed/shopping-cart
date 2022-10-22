@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Cart from "./components/Cart/Cart";
 import Filter from "./components/Filter/Filter";
 import Footer from "./components/Footer/Footer";
@@ -59,9 +59,9 @@ function App() {
     }
     setCartItem(cartItemsClone);
   };
-  useEffect(() => {
-    localStorage.setItem("cartItem", JSON.stringify(cartItem));
-  });
+  // useEffect(() => {
+  //   localStorage.setItem("cartItem", JSON.stringify(cartItem));
+  // });
   const removeFromCart = (product) => {
     const cartItemsClone = [...cartItem];
     setCartItem(cartItemsClone.filter((p) => p.id !== product.id));
@@ -76,10 +76,10 @@ function App() {
             <Products products={products} addToCart={addToCart} />
             <Filter
               productNumber={products.length}
-              handleFilterBySize={handleFilterBySize}
               size={size}
-              handleFilterBySort={handleFilterBySort}
               sort={sort}
+              handleFilterBySize={handleFilterBySize}
+              handleFilterBySort={handleFilterBySort}
             />
           </div>
           <Cart cartItem={cartItem} removeFromCart={removeFromCart} />
