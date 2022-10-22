@@ -16,25 +16,26 @@ export const fetchProducts = () => {
 export const filteredSize = (products, value) => {
   return (dispatch) => {
     let productsClone = [...products];
-    const newProducts = productsClone.filter(
+    let newProducts = productsClone.filter(
       (p) => p.sizes.indexOf(value) !== -1
     );
     dispatch({
       type: FILTER_SIZE,
-      data :{
-        size : value,
-        products: value === "All" ? products : newProducts,
-      }
+      data: {
+        size: value,
+        products: value === "ALL" ? products : newProducts,
+      },
     });
   };
 };
+
 export const filteredSort = (products, value) => {
   return (dispatch) => {
     let productsClone = [...products];
-    const newProducts = productsClone.sort(function (a, b) {
-      if (value === "Lower") {
+    let newProducts = productsClone.sort(function (a, b) {
+      if (value === "lowest") {
         return a.price - b.price;
-      } else if (value === "Highst") {
+      } else if (value === "highest") {
         return b.price - a.price;
       } else {
         return a.id < b.id ? 1 : -1;

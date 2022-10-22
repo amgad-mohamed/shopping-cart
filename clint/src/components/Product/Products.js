@@ -4,18 +4,21 @@ import ProductModal from "./ProductModal";
 import Bounce from "react-reveal/Bounce";
 import { connect } from "react-redux";
 import { fetchProducts } from "../../store/actions/product";
+import { addToCart } from "../../store/actions/cart";
 
 function Products(props) {
   const [product, setProduct] = useState("");
+
   const openModal = (product) => {
     setProduct(product);
   };
   const closeModal = () => {
     setProduct(false);
   };
+
   useEffect(() => {
     props.fetchProducts();
-  },[]);
+  }, []);
 
   return (
     <Bounce left cascade>
@@ -46,7 +49,9 @@ function Products(props) {
 
 export default connect(
   (state) => {
-    return { products: state.products.filterProducts };
+    return {
+      products: state.products.filterProducts,
+    };
   },
-  { fetchProducts }
+  { fetchProducts, addToCart }
 )(Products);
