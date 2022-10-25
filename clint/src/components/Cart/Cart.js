@@ -32,6 +32,7 @@ function Cart(props) {
   const closeModal = () => {
     props.clearOrder();
     setShowForm(false);
+
   };
 
   return (
