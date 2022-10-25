@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import "../../css/Cart/Cart.css";
 import Checkoutform from "../Checkoutform/Checkoutform";
 import Bounce from "react-reveal/Bounce";
-
 import { connect } from "react-redux";
 import { removeCart } from "../../store/actions/cart";
+import { createOrder, clearOrder } from "../../store/actions/order";
+
 import OrderModal from "./OrderModal";
 function Cart(props) {
   const [showForm, setShowForm] = useState(false);
-  const [order, setOrder] = useState(false);
+  // const [order, setOrder] = useState(false);
   const [value, setValue] = useState("");
 
   const handleOnSubmit = (e) => {
@@ -18,7 +19,7 @@ function Cart(props) {
       name: value.name,
       email: value.email,
     };
-    setOrder(order);
+    props.createOrder(order);
   };
 
   const handleChange = (e) => {
@@ -29,7 +30,7 @@ function Cart(props) {
   };
 
   const closeModal = () => {
-    setOrder(false);
+    props.clearOrder();
   };
 
   return (
@@ -44,10 +45,10 @@ function Cart(props) {
 
       <OrderModal
         cartItems={props.cartItems}
-        order={order}
+        order={props.order}
         closeModal={closeModal}
       />
-      
+
       <Bounce bottom cascade>
         <div className="cart-items">
           {props.cartItems.map((item) => (
@@ -89,8 +90,9 @@ function Cart(props) {
 export default connect(
   (state) => {
     return {
+      order: state.order.order,
       cartItems: state.cart.cartItems,
     };
   },
-  { removeCart }
+  { removeCart, createOrder, clearOrder }
 )(Cart);
