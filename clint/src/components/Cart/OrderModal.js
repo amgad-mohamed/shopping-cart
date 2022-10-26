@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
+import { words } from "../../word";
 
 function OrderModal(props) {
   const { order, closeModal, cartItems } = props;
@@ -10,18 +11,18 @@ function OrderModal(props) {
         <span className="close-icon" onClick={closeModal}>
           &times;
         </span>
-        <p className="alert-success">order done success</p>
+        <p className="alert-success">{words.orderDoneSuccess}</p>
         <table>
           <tr>
-            <td>Name:</td>
+            <td>{words.Name}</td>
             <td>{order.name}</td>
           </tr>
           <tr>
-            <td>Email:</td>
+            <td>{words.email}</td>
             <td>{order.email}</td>
           </tr>
           <tr>
-            <td>Total:</td>
+            <td>{words.total}</td>
             <td>
               ${" "}
               {cartItems.reduce((acc, p) => {
@@ -30,7 +31,7 @@ function OrderModal(props) {
             </td>
           </tr>
           <tr>
-            <td>Select Product:</td>
+            <td>{words.selectProduct}</td>
             <td>
               {cartItems.map((p) => (
                 <div className="cart-data">

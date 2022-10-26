@@ -5,6 +5,7 @@ import Bounce from "react-reveal/Bounce";
 import { connect } from "react-redux";
 import { fetchProducts } from "../../store/actions/product";
 import { addToCart } from "../../store/actions/cart";
+import { words } from "../../word";
 
 function Products(props) {
   const [product, setProduct] = useState("");
@@ -35,7 +36,7 @@ function Products(props) {
                     <span>${product.price}</span>
                   </div>
                   <button onClick={() => props.addToCart(product)}>
-                    Add To Cart
+                   {words.addToCart}
                   </button>
                 </div>
               );
