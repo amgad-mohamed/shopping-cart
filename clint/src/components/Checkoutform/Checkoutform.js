@@ -2,6 +2,7 @@ import React from "react";
 import "../../css/Checkoutform/Checkoutform.css";
 import Input from "../Input/Input";
 import Zoom from "react-reveal/Zoom";
+import { words } from "../../word";
 function Checkoutform(props) {
   return (
     <>
@@ -13,20 +14,20 @@ function Checkoutform(props) {
           <Zoom>
             <form onSubmit={props.handleOnSubmit}>
               <Input
-                label="Name"
+                label={words.name}
                 type="text"
-                name="name"
+                name={words.name2}
                 onChange={props.handleChange}
               />
               <Input
-                label="Email"
-                type="email"
-                name="email"
+                label={words.Email}
+                type={words.email}
+                name={words.email}
                 onChange={props.handleChange}
               />
 
               <div>
-                <button type="submit">Checkout</button>
+                <button type="submit">{words.checkout}</button>
               </div>
             </form>
           </Zoom>
