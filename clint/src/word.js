@@ -10,7 +10,7 @@ export const words = {
   selectBtn:"Select Product",
   orderDoneSuccess:"order done success",
   name:"Name:",
-  name2:"email",
+  name2:"name",
   Email:"Email:",
   selectProduct:"Select Product:",
   text:"text",

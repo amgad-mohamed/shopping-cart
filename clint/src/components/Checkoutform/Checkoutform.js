@@ -15,7 +15,7 @@ function Checkoutform(props) {
             <form onSubmit={props.handleOnSubmit}>
               <Input
                 label={words.name}
-                type="text"
+                type={words.text}
                 name={words.name2}
                 onChange={props.handleChange}
               />
