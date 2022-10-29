@@ -33,7 +33,6 @@ function Cart(props) {
   const closeModal = () => {
     props.clearOrder();
     setShowForm(false);
-
   };
 
   return (
@@ -59,11 +58,19 @@ function Cart(props) {
               <img src={item.imageUrl} alt="" />
               <div className="cart-info">
                 <div>
-                  <p>{words.title}  {item.title}</p>
-                  <p>{words.qty} {item.qty} </p>
-                  <p>{words.price} {item.price}</p>
+                  <p>
+                    {words.title} {item.title}
+                  </p>
+                  <p>
+                    {words.qty} {item.qty}{" "}
+                  </p>
+                  <p>
+                    {words.price} {item.price}
+                  </p>
                 </div>
-                <button onClick={() => props.removeCart(item)}>{words.remove}</button>
+                <button onClick={() => props.removeCart(item)}>
+                  {words.remove}
+                </button>
               </div>
             </div>
           ))}
