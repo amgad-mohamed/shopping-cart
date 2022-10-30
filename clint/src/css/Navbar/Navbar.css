@@ -1,0 +1,20 @@
+.nav {
+  display: flex;
+  background-color: #ddd;
+  list-style: none;
+  padding: 10px 35px;
+}
+
+.nav a {
+  display: block;
+  background-color: gray;
+  color: #fff;
+  padding: 5px 10px;
+  margin-right: 5px;
+  text-decoration: none;
+}
+
+.nav a.active {
+  color: #fff;
+  background: #2a5ea2;
+}
