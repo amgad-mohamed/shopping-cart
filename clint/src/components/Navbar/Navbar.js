@@ -7,7 +7,6 @@ function Navbar() {
     <>
       <div className="nav">
         <NavLink to="/" end>
-          <i aria-hidden="true" className="home  icon"></i>
           Home
         </NavLink>{" "}
         <NavLink to="/orders">Orders</NavLink>
