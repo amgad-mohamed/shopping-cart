@@ -19,7 +19,7 @@ function Products(props) {
 
   useEffect(() => {
     props.fetchProducts();
-  }, []);
+  }, );
 
   return (
     <Bounce left cascade>
