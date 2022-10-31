@@ -19,7 +19,7 @@ function Products(props) {
 
   useEffect(() => {
     props.fetchProducts();
-  }, );
+  }, []);
 
   return (
     <Bounce left cascade>
@@ -36,7 +36,7 @@ function Products(props) {
                     <span>${product.price}</span>
                   </div>
                   <button onClick={() => props.addToCart(product)}>
-                   {words.addToCart}
+                    {words.addToCart}
                   </button>
                 </div>
               );

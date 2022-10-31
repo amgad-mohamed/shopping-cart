@@ -5,7 +5,6 @@ import Bounce from "react-reveal/Bounce";
 import { connect } from "react-redux";
 import { removeCart } from "../../store/actions/cart";
 import { createOrder, clearOrder } from "../../store/actions/order";
-
 import OrderModal from "./OrderModal";
 import { words } from "../../word";
 function Cart(props) {

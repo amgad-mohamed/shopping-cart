@@ -23,17 +23,17 @@ function Filter(props) {
                 props.filteredSize(props.products, e.target.value)
               }
             >
-            <option value="ALL">{words.ALL}</option>
-            <option value="XS">{words.XS}</option>
-            <option value="S">{words.S}</option>
-            <option value="M">{words.M}</option>
-            <option value="L">{words.L}</option>
-            <option value="XL">{words.XL}</option>
-            <option value="XXL">{words.XXL}</option>
+              <option value="ALL">{words.ALL}</option>
+              <option value="XS">{words.XS}</option>
+              <option value="S">{words.S}</option>
+              <option value="M">{words.M}</option>
+              <option value="L">{words.L}</option>
+              <option value="XL">{words.XL}</option>
+              <option value="XXL">{words.XXL}</option>
             </select>
           </div>
           <div className="filter-by-size">
-            <span>{words.o}</span>
+            <span>{words.order}</span>
             <select
               value={props.sort}
               className="filter-select"
@@ -41,7 +41,7 @@ function Filter(props) {
                 props.filteredSort(props.filterProducts, e.target.value)
               }
             >
-            <option value="latest">{words.Latest}</option>
+              <option value="latest">{words.Latest}</option>
               <option value="lowest">{words.Lowest}</option>
               <option value="highest">{words.Highest}</option>
             </select>
