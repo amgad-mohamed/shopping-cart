@@ -6,7 +6,7 @@ import"../css/Orders.css"
 function Orders(props) {
   useEffect(() => {
     props.fetchOrder();
-  }, );
+  }, []);
   const { orders } = props;
 
   return (
